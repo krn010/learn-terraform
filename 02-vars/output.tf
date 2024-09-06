@@ -10,7 +10,7 @@ output "Second value in list" {
   value = var.v2[1]
 }
 
-output " Value in map " {
+output "Value in map" {
   value = var.v3["abc"]
 }
 
