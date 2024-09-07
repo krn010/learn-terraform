@@ -1,5 +1,5 @@
 resource "aws_instance" "frontend" {
-  ami                    = var.ami
+  ami                    = data.aws_ami.centos8.image_id
   instance_type          = var.instance_type
   vpc_security_group_ids = var.vpc_security_group_ids
   tags = {
@@ -16,7 +16,7 @@ resource "aws_route53_record" "frontend" {
 }
 
 resource "aws_instance" "backend" {
-  ami                    = var.ami
+  ami                    = data.aws_ami.centos8.image_id
   instance_type          = var.instance_type
   vpc_security_group_ids = var.vpc_security_group_ids
   tags = {
@@ -34,7 +34,7 @@ resource "aws_route53_record" "backend" {
 
 
 resource "aws_instance" "mysql" {
-  ami                    = var.ami
+  ami                    = data.aws_ami.centos8.image_id
   instance_type          = var.instance_type
   vpc_security_group_ids = var.vpc_security_group_ids
   tags = {
