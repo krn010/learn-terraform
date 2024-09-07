@@ -10,3 +10,6 @@ variable "zone_id" {
   default = "Z08439573VJI40CLVIM4E"
 }
 
+variable "components" {
+  default = ["frontend", "backednd", "mysql"]
+}
