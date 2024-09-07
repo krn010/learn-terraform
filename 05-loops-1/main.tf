@@ -20,7 +20,7 @@ output "test" {
 #}
 
 variable "components" {
-  default = ["frontend,backend,mysql"]
+  default = ["frontend","backend","mysql"]
 }
 
 resource "aws_instance" "test" {
@@ -30,6 +30,6 @@ resource "aws_instance" "test" {
   vpc_security_group_ids = ["sg-01feec8e482efd795"]
 
   tags = {
-    Name = element(var.components,count.index )
+    Name = element(var.components, count.index )
   }
 }
