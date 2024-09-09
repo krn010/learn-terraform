@@ -25,3 +25,4 @@ resource "null_resource" "test1" {
     commmand = "echo ${each.key} = ${each.value}"
   }
 }
+
