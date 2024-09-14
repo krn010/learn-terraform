@@ -1,7 +1,7 @@
 resource "aws_instance" "instances" {
   for_each               = var.components
   ami                    = data.aws_ami.centos8.image_id
-  instance_type          = lookup(each.value, "instance_type", "t3.micro" )
+  instance_type          = lookup(each.value, "instance_type", "t3.small" )
   vpc_security_group_ids = var.vpc_security_group_ids
   tags = {
     Name = lookup(each.value, "name", null )
