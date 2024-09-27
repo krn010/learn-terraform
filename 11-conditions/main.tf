@@ -5,7 +5,7 @@ resource "aws_instance" "test" {
 }
 
 variable "instance_type" {
-  default = "null"
+  default = null
 }
 
 variable "ami" {
